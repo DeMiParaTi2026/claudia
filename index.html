@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es" style="">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>De Mí Para Ti — Amor y Amistad</title>
+<!-- Fonts: Roboto, Dancing Script & Playfair Display, Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Montserrat:wght@400;600;700;900&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,500&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#b0251b",
+          "primary-container": "#d33f30",
+          "secondary": "#825500",
+          "secondary-container": "#fdaf2a",
+          "surface": "#fff8f5",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#fff1ea",
+          "surface-container": "#ffeadf",
+          "surface-container-high": "#fbe4d7",
+          "on-surface": "#251911",
+          "on-surface-variant": "#5a413d",
+          "terracotta-matte": "#bf5b47",
+          "porcelain-cream": "#fcf8f4",
+          "blush-matte": "#ecd6cc"
+        },
+        fontFamily: {
+          "script": ["'Dancing Script'", "cursive"],
+          "body": ["'Roboto'", "sans-serif"],
+          "headline": ["'Playfair Display'", "serif"],
+          "game": ["'Montserrat'", "'Roboto'", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #fff8f5;
+    font-family: 'Roboto', sans-serif;
+  }
+  ::-webkit-scrollbar { display: none; }
+
+  /* ================= ESTILO ESCULTÓRICO MATE & RELIEVE SÓLIDO ================= */
+  .text-sculpted-solid {
+    font-family: 'Roboto', sans-serif;
+    color: #3b221a;
+    text-shadow:
+      0 -1.5px 0.5px rgba(255, 255, 255, 0.95),
+      0 1px 1px rgba(255, 255, 255, 0.7),
+      0 2px 2px rgba(110, 48, 38, 0.28),
+      0 4px 6px rgba(58, 25, 18, 0.18);
+  }
+
+  .text-script-sculpted {
+    font-family: 'Dancing Script', cursive;
+    color: #b0251b;
+    text-shadow:
+      0 -1px 0 rgba(255, 255, 255, 0.95),
+      0 1px 2px rgba(255, 255, 255, 0.6),
+      0 2px 3px rgba(120, 32, 24, 0.3),
+      0 4px 8px rgba(70, 18, 12, 0.16);
+    display: inline-block;
+  }
+
+  .text-sculpted-terracotta {
+    font-family: 'Dancing Script', cursive;
+    color: #c43c2c;
+    text-shadow:
+      0 -1px 1px rgba(255, 255, 255, 0.9),
+      0 1.5px 2px rgba(90, 24, 18, 0.26),
+      0 3px 6px rgba(45, 15, 10, 0.14);
+  }
+
+  /* Marco Cerámico Esculpido Mate */
+  .frame-sculpted-matte {
+    background: linear-gradient(145deg, #ffffff 0%, #faede5 40%, #edd4c8 100%);
+    box-shadow:
+      inset 0 1.5px 2px rgba(255, 255, 255, 0.95),
+      inset 0 -2px 3px rgba(115, 52, 42, 0.18),
+      0 14px 32px -8px rgba(90, 35, 25, 0.16),
+      0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(230, 202, 192, 0.85);
+  }
+
+  /* Marco Orgánico Esculpido 3D para la fotografía */
+  .frame-sculpted-organic {
+    border-radius: 46% 54% 50% 50% / 54% 48% 52% 46%;
+    background: linear-gradient(150deg, #ffffff 0%, #f9eee7 45%, #ecdad0 100%);
+    box-shadow:
+      inset 0 2px 3px rgba(255, 255, 255, 0.98),
+      inset 0 -2.5px 4px rgba(115, 52, 42, 0.18),
+      0 18px 36px -10px rgba(95, 38, 28, 0.16),
+      0 4px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(232, 208, 198, 0.85);
+  }
+
+  .window-sculpted-organic {
+    border-radius: 44% 56% 48% 52% / 52% 46% 54% 48%;
+  }
+
+  /* Placa esculpida mate */
+  .plate-matte-relief {
+    background: linear-gradient(140deg, #ffffff 0%, #f7eee7 60%, #eedcd2 100%);
+    box-shadow:
+      0 4px 14px rgba(75, 30, 20, 0.1),
+      inset 0 1px 1px rgba(255, 255, 255, 0.95),
+      inset 0 -1px 1.5px rgba(120, 50, 40, 0.16);
+    border: 1px solid rgba(235, 210, 200, 0.85);
+  }
+
+  /* Botón interactivo escultórico mate */
+  .btn-cta-sculpted {
+    background: linear-gradient(140deg, #d94838 0%, #b0251b 55%, #8d1c13 100%);
+    box-shadow:
+      inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+      inset 0 -2.5px 3px rgba(50, 8, 6, 0.4),
+      0 10px 24px -5px rgba(176, 37, 27, 0.38),
+      0 3px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-cta-sculpted:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+      inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
+      inset 0 -2px 3px rgba(50, 8, 6, 0.4),
+      0 14px 28px -4px rgba(176, 37, 27, 0.48);
+  }
+  .btn-cta-sculpted:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  .rose-matte-glyph {
+    filter: drop-shadow(0 2px 3px rgba(95, 30, 22, 0.18));
+    display: inline-block;
+  }
+</style>
+</head>
+<body class="bg-[#fff8f5] font-body text-on-surface antialiased min-h-screen relative selection:bg-surface-container selection:text-primary overflow-x-hidden">
+<!-- ================================================================= -->
+<!-- 1. FONDO VIVO CONTINUO: LLUVIA Y DANZA DE CORAZONES FLOTANTES     -->
+<!-- ================================================================= -->
+<canvas class="fixed inset-0 pointer-events-none z-0 w-full h-full" id="liveLivingBackgroundCanvas"></canvas>
+<!-- ================================================================= -->
+<!-- CONTENIDO PRINCIPAL                                               -->
+<!-- ================================================================= -->
+<main class="relative z-10 flex flex-col items-center w-full">
+<!-- =============================================================== -->
+<!-- BLOQUE 1: CABECERA & PRIMER VIDEO (BUZÓN)                       -->
+<!-- =============================================================== -->
+<section class="w-full max-w-3xl px-4 sm:px-6 pt-10 pb-6 flex flex-col items-center">
+<div class="mb-5 flex items-center justify-center gap-2 px-6 py-2.5 rounded-full plate-matte-relief text-[#4a241b] text-sm sm:text-base font-semibold tracking-wider select-none shadow-sm animate-pulse mx-auto">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs sm:text-sm tracking-[0.14em] uppercase text-[#3f221a]">TÓMATE TU TIEMPO Y DESLIZA LENTAMENTE...</span>
+<span class="material-symbols-outlined text-base text-[#bf5b47]">arrow_downward</span>
+</div>
+<div class="mb-8 text-center flex flex-col items-center justify-center select-none">
+<h1 class="text-sculpted-solid text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-[0.22em] leading-tight text-center">
+      LLEGÓ UN MENSAJE
+    </h1>
+<span class="text-sculpted-terracotta text-4xl sm:text-6xl md:text-7xl -mt-1 sm:-mt-3 px-3 font-normal tracking-wide">
+      especial para ti
+    </span>
+<div class="w-20 h-1 rounded-full bg-gradient-to-r from-transparent via-[#bf5b47]/40 to-transparent mt-2"></div>
+</div>
+<div class="relative w-full max-w-[360px] sm:max-w-[380px] mx-auto">
+<div class="relative rounded-[2.2rem] p-2.5 sm:p-3 frame-sculpted-matte">
+<div class="relative w-full aspect-[9/16] rounded-[1.8rem] overflow-hidden shadow-inner bg-[#f6ded1]">
+<!-- Video nativo ajustado -->
+<video src="https://res.cloudinary.com/urzwziyj/video/upload/Buzon_recursos.mp4" preload="auto" autoplay loop muted playsinline class="w-full h-full block rounded-[1.8rem] object-cover pointer-events-none"></video>
+</div>
+</div>
+</div>
+</section>
+
+<!-- =============================================================== -->
+<!-- BLOQUE 1.5: LA INVITACIÓN                                       -->
+<!-- =============================================================== -->
+<section class="w-full max-w-2xl px-6 py-6 flex flex-col items-center text-center">
+<div class="mb-6 flex items-center justify-center gap-2 px-6 py-2.5 rounded-full plate-matte-relief text-[#4a241b] text-sm sm:text-base font-semibold tracking-wider select-none shadow-sm animate-pulse">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs sm:text-sm tracking-[0.14em] uppercase text-[#3f221a]">DESLIZA HACIA ABAJO</span>
+<span class="material-symbols-outlined text-base text-[#bf5b47]">arrow_downward</span>
+</div>
+<p class="text-sculpted-solid text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-[#3f221a] max-w-2xl leading-relaxed mb-8 select-none">
+    “Hay <strong class="font-black text-[#2e150f]">palabras</strong> que necesitaban su <strong class="font-black text-[#2e150f]">propio espacio</strong>.”
+  </p>
+<a class="btn-cta-sculpted inline-flex items-center gap-3 px-10 py-4 rounded-full text-white text-base sm:text-lg font-bold tracking-widest uppercase cursor-pointer select-none" href="#mensaje-central" id="btnDescubrirMensaje">
+<span class="">DESCUBRIR MENSAJE</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-lg">arrow_downward</span>
+</a>
+</section>
+
+<div class="w-full max-w-md py-4 flex items-center justify-center gap-5 select-none opacity-85">
+<div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#d6a595]/50 to-primary/30"></div>
+<div class="flex items-center gap-3 px-3 py-1 rounded-full plate-matte-relief">
+<span class="rose-matte-glyph text-base">🌹</span>
+<span class="material-symbols-outlined text-primary text-base drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="rose-matte-glyph text-base">🌹</span>
+</div>
+<div class="h-px flex-1 bg-gradient-to-l from-transparent via-[#d6a595]/50 to-primary/30"></div>
+</div>
+
+<!-- =============================================================== -->
+<!-- BLOQUE 2: EL MENSAJE CENTRAL                                    -->
+<!-- =============================================================== -->
+<section class="w-full relative py-8 sm:py-12 flex justify-center scroll-mt-6" id="mensaje-central">
+<div class="w-full max-w-3xl px-4 sm:px-6 flex flex-col items-center">
+<div class="mb-5 inline-flex items-center gap-2.5 plate-matte-relief px-8 py-3 rounded-full text-[#4a241b] text-sm sm:text-base font-bold uppercase tracking-widest shadow-md">
+<span class="material-symbols-outlined text-lg sm:text-xl text-primary" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="text-[#3a1d17]">HAZ CLIC PARA VER EL VIDEO</span>
+</div>
+<div class="relative w-full max-w-[400px] sm:max-w-[440px] mx-auto rounded-[2.5rem] p-3 sm:p-4 frame-sculpted-matte">
+<div class="relative w-full aspect-[9/16] rounded-[2rem] overflow-hidden shadow-lg flex items-center justify-center bg-[#fff8f5]">
+<!-- Video nativo ajustado y con PRELOAD="NONE" -->
+<video src="https://res.cloudinary.com/urzwziyj/video/upload/v1789684930/CLAUDIA_FINAL.mp4" preload="none" controls playsinline class="w-full h-full block rounded-[2rem] object-cover"></video>
+</div>
+</div>
+<div class="mt-8 flex flex-col items-center gap-1.5 select-none opacity-90">
+<div class="inline-flex items-center gap-2.5 plate-matte-relief px-6 py-2.5 rounded-full text-[#4a241b] text-sm sm:text-base font-semibold tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[#3f221a] tracking-[0.14em] uppercase text-xs sm:text-sm">SIGUE BAJANDO, AÚN HAY MÁS...</span>
+<span class="material-symbols-outlined text-base text-[#bf5b47] animate-pulse">arrow_downward</span>
+</div>
+</div>
+</div>
+</section>
+
+<div class="w-full max-w-sm py-6 flex items-center justify-center gap-4 select-none opacity-80">
+<span class="text-xs text-primary/70 transform -rotate-45 select-none">🌸</span>
+<div class="w-12 h-px bg-gradient-to-r from-transparent via-[#bf5b47]/40 to-transparent"></div>
+<div class="w-8 h-8 rounded-full plate-matte-relief flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="w-12 h-px bg-gradient-to-r from-transparent via-[#bf5b47]/40 to-transparent"></div>
+<span class="text-xs text-primary/70 transform rotate-45 select-none">🌸</span>
+</div>
+
+<!-- =============================================================== -->
+<!-- BLOQUE 3: LA PAUSA ROMÁNTICA                                    -->
+<!-- =============================================================== -->
+<section class="w-full max-w-4xl px-6 py-10 sm:py-16 flex flex-col items-center justify-center text-center select-none" id="romanticPauseSection">
+<div class="max-w-3xl mx-auto px-6 sm:px-12 py-12 sm:py-14 rounded-[3rem] bg-[#fffaf7]/85 backdrop-blur-sm border border-[#eedcd2] shadow-[0_14px_34px_-8px_rgba(100,40,30,0.09)]">
+<p class="text-sculpted-solid text-2xl sm:text-3xl md:text-4xl leading-relaxed tracking-[0.08em] font-black">
+      “Porque un minuto <strong class="font-black text-[#251911]">NO basta para explicar<br><br></strong>
+</p>
+<div class="mt-4 sm:mt-6">
+<p class="text-sculpted-solid text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-normal text-[#b0251b] leading-tight">lo agradecido con Dios por tu amor.</p>
+</div>
+</div>
+</section>
+
+<div class="w-full max-w-xs py-4 flex items-center justify-center gap-4 select-none opacity-80">
+<div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#d6a595]/50 to-primary/30"></div>
+<span class="material-symbols-outlined text-[#bf5b47] text-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div class="h-px flex-1 bg-gradient-to-l from-transparent via-[#d6a595]/50 to-primary/30"></div>
+</div>
+
+<!-- =============================================================== -->
+<!-- BLOQUE 4: FOTOGRAFÍA EN MARCO ORGÁNICO                          -->
+<!-- =============================================================== -->
+<section class="w-full max-w-2xl px-6 pt-6 pb-16 flex flex-col items-center mx-auto justify-center" id="photoSection">
+<div class="relative w-full max-w-md flex justify-center items-center flex-col mx-auto">
+<div class="relative p-4 sm:p-5 frame-sculpted-organic" style="border-radius: 2.8rem;">
+<div class="relative w-72 sm:w-80 aspect-[9/16] rounded-[2.2rem] overflow-hidden bg-[#fff8f5] border border-white/90 shadow-md">
+<!-- Video 3D nativo ajustado con preload="none" -->
+<video src="https://res.cloudinary.com/urzwziyj/video/upload/v1789684923/CLAUDIA_3D.mp4" preload="none" autoplay loop muted playsinline class="w-full h-full block rounded-[2.2rem] object-cover"></video>
+</div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20 plate-matte-relief px-6 sm:px-10 py-3 sm:py-4 rounded-full flex items-center justify-center gap-2 sm:gap-3 shadow-md whitespace-nowrap text-center max-w-[95%] sm:max-w-none">
+<span class="material-symbols-outlined text-lg sm:text-2xl text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-sculpted-solid text-sm sm:text-lg tracking-[0.12em] font-extrabold text-[#3a1d17] text-center whitespace-nowrap">Eres y serás mi amor siempre,&nbsp;<font color="#d94838">te amo.</font></span>
+<span class="material-symbols-outlined text-lg sm:text-2xl text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</div>
+</section>
+
+<div class="w-full max-w-sm py-6 flex items-center justify-center gap-4 select-none opacity-85">
+<div class="w-10 h-10 rounded-full plate-matte-relief flex items-center justify-center">
+<span class="material-symbols-outlined text-[#d94838] text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="w-12 h-12 rounded-full plate-matte-relief flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="w-10 h-10 rounded-full plate-matte-relief flex items-center justify-center">
+<span class="material-symbols-outlined text-[#d94838] text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+
+<!-- =============================================================== -->
+<!-- BLOQUE 5: EL CIERRE Y PIE DE PÁGINA                             -->
+<!-- =============================================================== -->
+<section class="w-full max-w-2xl px-6 pb-20 flex flex-col items-center text-center select-none">
+<div class="w-full max-w-xs py-4 flex items-center justify-center gap-4 opacity-80 mb-4">
+<div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#d6a595]/50 to-primary/30"></div>
+<span class="rose-matte-glyph text-base">🌹</span>
+<span class="material-symbols-outlined text-primary text-base drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="rose-matte-glyph text-base">🌹</span>
+<div class="h-px flex-1 bg-gradient-to-l from-transparent via-[#d6a595]/50 to-primary/30"></div>
+</div>
+<p class="text-sculpted-terracotta text-3xl sm:text-5xl md:text-6xl font-normal tracking-wide text-[#b0251b] leading-relaxed">Feliz día de amor y amistad.</p>
+<div class="mt-4 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-[#bf5b47] text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</section>
+</main>
+
+<!-- ================================================================= -->
+<!-- SCRIPTS OPTIMIZADOS PARA CARGA MÓVIL                              -->
+<!-- ================================================================= -->
+<script>
+(function() {
+  const canvas = document.getElementById('liveLivingBackgroundCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    // OPTIMIZACIÓN MÓVIL: Reducción dinámica de elementos en pantalla
+    const isMobile = window.innerWidth < 768;
+    const HEART_COUNT = isMobile ? 20 : 68; // Menos corazones en celular para fluidez
+    
+    const floatingElements = [];
+
+    const HEART_PALETTES = [
+      { fill: '#9333ea', highlight: '#c084fc', shadow: 'rgba(147, 51, 234, 0.35)', border: '#7e22ce' },
+      { fill: '#a855f7', highlight: '#d8b4fe', shadow: 'rgba(168, 85, 247, 0.30)', border: '#9333ea' },
+      { fill: '#c084fc', highlight: '#f3e8ff', shadow: 'rgba(192, 132, 252, 0.28)', border: '#a855f7' },
+      { fill: '#7e22ce', highlight: '#a855f7', shadow: 'rgba(126, 34, 206, 0.38)', border: '#6b21a8' },
+      { fill: '#e9d5ff', highlight: '#ffffff', shadow: 'rgba(216, 180, 254, 0.25)', border: '#c084fc' },
+      { fill: '#b0251b', highlight: '#d33f30', shadow: 'rgba(176, 37, 27, 0.35)', border: '#8d1c13' },
+      { fill: '#bf5b47', highlight: '#dc7060', shadow: 'rgba(191, 91, 71, 0.30)', border: '#a74836' },
+      { fill: '#d94838', highlight: '#f37566', shadow: 'rgba(217, 72, 56, 0.32)', border: '#b53526' },
+      { fill: '#f43f5e', highlight: '#fb7185', shadow: 'rgba(244, 63, 94, 0.28)', border: '#e11d48' },
+      { fill: '#fda4af', highlight: '#fff1f2', shadow: 'rgba(253, 164, 175, 0.30)', border: '#fb7185' },
+      { fill: '#f7ded5', highlight: '#fff3ee', shadow: 'rgba(205, 160, 150, 0.30)', border: '#eed3c8' },
+      { fill: '#e69888', highlight: '#f3b4a6', shadow: 'rgba(180, 110, 95, 0.30)', border: '#dba090' }
+    ];
+
+    class FloatingMatteHeart {
+      constructor(initial = true) {
+        this.reset(initial);
+      }
+
+      reset(initial = false) {
+        this.x = Math.random() * width;
+        const tier = Math.random();
+        
+        if (tier < 0.40) {
+          this.scale = 0.9 + Math.random() * 0.7;
+          this.speedY = -(0.35 + Math.random() * 0.45);
+          this.opacity = 0.25 + Math.random() * 0.35;
+        } else if (tier < 0.82) {
+          this.scale = 1.7 + Math.random() * 0.9;
+          this.speedY = -(0.25 + Math.random() * 0.35);
+          this.opacity = 0.35 + Math.random() * 0.38;
+        } else {
+          this.scale = 2.8 + Math.random() * 1.1;
+          this.speedY = -(0.16 + Math.random() * 0.25);
+          this.opacity = 0.22 + Math.random() * 0.28;
+        }
+
+        this.y = initial ? Math.random() * (height + 100) : height + 30 + Math.random() * 80;
+        this.oscFreq = 0.005 + Math.random() * 0.012;
+        this.oscAmp = 0.8 + Math.random() * 2.2;
+        this.oscStep = Math.random() * Math.PI * 2;
+        this.rotZ = (Math.random() - 0.5) * 0.45;
+        this.rotSpeed = (Math.random() - 0.5) * 0.0025;
+        this.palette = HEART_PALETTES[Math.floor(Math.random() * HEART_PALETTES.length)];
+      }
+
+      update() {
+        this.oscStep += this.oscFreq;
+        this.y += this.speedY;
+        this.x += Math.sin(this.oscStep) * this.oscAmp;
+        this.rotZ += this.rotSpeed;
+
+        if (this.y < -100) {
+          this.reset(false);
+        }
+        if (this.x > width + 80) {
+          this.x = -60;
+        } else if (this.x < -80) {
+          this.x = width + 60;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotZ);
+        ctx.scale(this.scale, this.scale);
+
+        ctx.beginPath();
+        const s = 1.3;
+        ctx.moveTo(0, s * -4);
+        ctx.bezierCurveTo(-s * 6, -s * 10, -s * 12, -s * 2, 0, s * 10);
+        ctx.bezierCurveTo(s * 12, -s * 2, s * 6, -s * 10, 0, -s * 4);
+        ctx.closePath();
+
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.palette.fill;
+        ctx.shadowColor = this.palette.shadow;
+        ctx.shadowBlur = 12;
+        ctx.shadowOffsetY = 4;
+        ctx.fill();
+
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = this.palette.border;
+        ctx.stroke();
+
+        ctx.shadowColor = 'transparent';
+        ctx.beginPath();
+        ctx.ellipse(-s * 3, -s * 4.5, s * 2.2, s * 1.3, -Math.PI / 4, 0, Math.PI * 2);
+        ctx.fillStyle = this.palette.highlight;
+        ctx.globalAlpha = this.opacity * 0.45;
+        ctx.fill();
+
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < HEART_COUNT; i++) {
+      floatingElements.push(new FloatingMatteHeart(true));
+    }
+
+    function renderLoop() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < floatingElements.length; i++) {
+        floatingElements[i].update();
+        floatingElements[i].draw();
+      }
+      requestAnimationFrame(renderLoop);
+    }
+    requestAnimationFrame(renderLoop);
+  }
+
+  // Smooth scroll
+  const btnDescubrir = document.getElementById('btnDescubrirMensaje');
+  if (btnDescubrir) {
+    btnDescubrir.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('mensaje-central');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
